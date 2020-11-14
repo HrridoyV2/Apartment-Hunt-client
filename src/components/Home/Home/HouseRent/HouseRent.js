@@ -6,7 +6,8 @@ const HouseRent = () => {
             <div>
                 <div className="text-center my-5" style={{ color: '#16322E' }}>
                     <h5>House Rent</h5>
-                    <h1>Discover the latest Rent
+                    <h1>Discover the latest
+                    rent
                     <br />
                     available today </h1>
                 </div>
