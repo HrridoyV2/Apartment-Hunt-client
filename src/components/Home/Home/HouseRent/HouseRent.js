@@ -1,10 +1,42 @@
 import React from 'react';
-import img1 from '../../../../image/images/Rectangle 394.png'
-import img2 from '../../../../image/images/Rectangle 396.png'
-import img3 from '../../../../image/images/Rectangle 398.png'
+import img1 from '../../../../image/images/Rectangle 394.png';
+import img2 from '../../../../image/images/Rectangle 396.png';
+import img3 from '../../../../image/images/Rectangle 398.png';
+import img4 from '../../../../image/images/Rectangle 405.png';
+import img5 from '../../../../image/images/Rectangle 403.png';
+import img6 from '../../../../image/images/Rectangle 404.png';
+import HouseRentDetails from '../HouseRentDetails/HouseRentDetails';
+
 const HouseRent = () => {
+    const houseRentData = [
+        {
+            img: img1,
+            title: 'Washington Avenue'
+        },
+        {
+            img: img2,
+            title: 'Family Apartment Three'
+        },
+        {
+            img: img3,
+            title: 'Gorgeous house'
+        },
+        {
+            img: img4,
+            title: 'Luxury villa'
+        },
+        {
+            img: img5,
+            title: 'Epic Huda Palacio'
+        },
+        {
+            img: img6,
+            title: 'Washington Avenue'
+        },
+    ]
     return (
         <section>
+
             <div className='container'>
                 <div className="text-center my-5" style={{ color: '#16322E' }}>
                     <h5>House Rent</h5>
@@ -15,58 +47,14 @@ const HouseRent = () => {
                 </div>
                 <div>
                     <div className="row">
-                        <div className="col-md-4">
-                            <div className="card mt-4">
-                                <img className="card-img-top" src={img1} alt="" />
-                                <div className="card-body">
-                                    <h4 className="card-title">Washington Avenue</h4>
-                                    <p>Nasirabad H/S, Chattogram</p>
-                                    <p>3 Bedrooms, 2Bathroom</p>
-                                    <div className="d-flex justify-content-between">
-                                        <h2>$194</h2>
-                                        <button>View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card mt-4">
-                                <img className="card-img-top" src={img2} alt="" />
-                                <div className="card-body">
-                                    <h4 className="card-title">Family Apartment Three</h4>
-                                    <p>Nasirabad H/S, Chattogram</p>
-                                    <p>3 Bedrooms, 2Bathroom</p>
-                                    <div className="d-flex justify-content-between">
-                                        <h2>$194</h2>
-                                        <button>View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card mt-4">
-                                <img className="card-img-top" src={img3} alt="" />
-                                <div className="card-body">
-                                    <h4 className="card-title">Gorgeous house</h4>
-                                    <p>Nasirabad H/S, Chattogram</p>
-                                    <p>3 Bedrooms, 2Bathroom</p>
-                                    <div className="d-flex justify-content-between">
-                                        <h2>$194</h2>
-                                        <button>View Details</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4">
-                            <div className="card mt-4">
-                                <img className="card-img-top" src={img1} alt="" />
-                                <div className="card-body">
-                                    <h4 className="card-title">Washington Avenue</h4>
-                                </div>
-                            </div>
-                        </div>
+                        {
+                            houseRentData.map(houseRentData =>
+                                <HouseRentDetails houseRentData={houseRentData}></HouseRentDetails>)
+                        }
                     </div>
                 </div>
+
+
             </div>
         </section>
     );
