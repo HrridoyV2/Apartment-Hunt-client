@@ -9,11 +9,13 @@ import {
 import Home from './components/Home/Home/Home';
 function App() {
   return (
-
     <Router>
       <Switch>
-        <Route>
+        <Route exact path="/">
           <Home></Home>
+        </Route>
+        <Route path="/home">
+          <HuntDetails />
         </Route>
       </Switch>
     </Router>
