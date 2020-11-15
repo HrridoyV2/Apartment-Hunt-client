@@ -1,8 +1,10 @@
 import React from "react";
 import Navbar from "../../../components/Home/Home/Navbar/Navbar";
-import HuntGallery from '../HuntGallery/HuntGallery';
-import HuntInfo from '../HuntInfo/HuntInfo';
-import BookingForm from '../BookingForm/BookingForm';
+
+import BookingForm from "../BookingForm/BookingForm";
+import HuntGallery from "../HuntGallery/HuntGallery";
+import HuntInfo from "../HuntInfo/HuntInfo";
+
 function HuntDetails() {
   return (
     <div>
