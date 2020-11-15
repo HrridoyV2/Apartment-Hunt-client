@@ -5,7 +5,7 @@ import Navbar from './Navbar/Navbar';
 
 const Home = () => {
     return (
-        <div> Git 
+        <div>
             <Navbar></Navbar>
             <HeaderMain></HeaderMain>
             <HouseRent></HouseRent>
