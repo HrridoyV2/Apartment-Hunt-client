@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home/Home";
 import HuntDetails from "./components/HuntDetails/HuntDetails/HuntDetails";
 import MyOrders from "./components/MyOrders/MyOrders";
+
 function App() {
   return (
     <Router>
@@ -12,7 +13,7 @@ function App() {
           <Home></Home>
         </Route>
         <Route path="/home">
-          <HuntDetails />
+          <HuntDetails></HuntDetails>
         </Route>
         <Route path='/myOrders'>
           <MyOrders />
