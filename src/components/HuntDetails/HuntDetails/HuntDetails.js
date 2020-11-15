@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../../Navbar/Navbar";
+import Navbar from "../../../components/Home/Home/Navbar/Navbar";
 import BookingForm from "../BookingForm/BookingForm";
 import HuntGallery from "../HuntGallery/HuntGallery";
 import HuntInfo from "../HuntInfo/HuntInfo";
