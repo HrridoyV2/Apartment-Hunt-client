@@ -3,10 +3,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home/Home";
 import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails'
-import MyOrders from "./components/MyOrders/MyOrders";
 import Login from './components/Login/Login';
-import PrivateRoute from './components/Login/PrivateRoute';
-import Dashboard from './components/Dashboard/Dashboard';
+
 
 export const UserContext = createContext();
 
@@ -19,7 +17,7 @@ function App() {
     message: ''
   });
 
-  
+
   return (
     <UserContext.Provider value={[user, setUser]}>
       <Router>
@@ -33,23 +31,24 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/myOrders">
-            <MyOrders />
-          </Route>
-          <Route path="/login">
+
+
+          {/* <Route path="/login">
             <Login> </Login>
-            <Route path="/dashboard/:selectedService">
-            <Dashboard />
-        </Route>
-        </Route>
-        <Route path='/myOrders'>
-          <MyOrders />
-        </Route>
-        <Route path='/login'>
-          <Login> </Login>
-        </Route>
-      </Switch>
-    </Router>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+          </Route> */}
+
+          <Route path="/homeDetails">
+            <HomeDetails></HomeDetails>
+          </Route>
+
+          <Route path='/login'>
+            <Login> </Login>
+          </Route>
+        </Switch>
+      </Router>
     </UserContext.Provider>
   );
 }
