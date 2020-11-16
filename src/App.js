@@ -33,21 +33,19 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/myOrders">
-            <MyOrders />
-          </Route>
+
+
           {/* <Route path="/login">
             <Login> </Login>
             <Route path="/dashboard">
               <Dashboard />
             </Route>
           </Route> */}
+
           <Route path="/homeDetails">
             <HomeDetails></HomeDetails>
           </Route>
-          <Route path='/myOrders'>
-            <MyOrders />
-          </Route>
+
           <Route path='/login'>
             <Login> </Login>
           </Route>

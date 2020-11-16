@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useContext } from "react";
 import "./BookingForm.css";
 import { useForm } from "react-hook-form";
+import { UserContext } from "../../../App";
 
-
-const BookingForm = () => {
+const BookingForm = ({ selectedRent }) => {
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const [user, setUser] = useContext(UserContext);
+    const onSubmit = (data) => {
+        console.log(data);
+        const orderDetails = { orderedRent: selectedRent, ...data }
+        console.log(data);
+        fetch("http://localhost:5000/orderRent", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderDetails),
+        })
+            .then((res) => res.json())
+            .then((success) => {
+                if (success) {
+                    alert("Order PLaced successfully");
+                }
+            });
+    };
     return (
         <div>
             <div className="form">
