@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { UserContext } from '../../../../App';
 import logo from '../../../../image/logos/Logo.png';
+
 const Navbar = () => {
+    const [user, setUser] = useContext(UserContext);
     return (
         <nav className="navbar navbar-expand-lg navbar-light py-3">
             <div className="container">
@@ -32,9 +36,21 @@ const Navbar = () => {
                             <Link className="nav-link mr-5 font-weight-bold" to="/contact">Contact</Link>
                         </li>
                     </ul>
-                    <Link to='/login' className='link'>
-                        <button style={{ padding: '4px 20px', color: "white", backgroundColor: " #275A53" }}
-                            className='btn-sm font-weight-bold'>Login</button></Link>
+                    {
+                            user.signed ?
+                            <Button onClick={() => setUser({
+                                signed: false,
+                                name: '',
+                                email: '',
+                                password: '',
+                                message: ''
+                            })} style={{ padding: '4px 20px', color: "white", backgroundColor: " #275A53" }}
+                            className='btn-sm font-weight-bold'>Logout <br/> {user.name}</Button> :
+                            <Link to="/login">
+                                <Button style={{ padding: '4px 20px', color: "white", backgroundColor: " #275A53" }}
+                            className='btn-sm font-weight-bold'> Login </Button>
+                            </Link>
+                        }
 
                 </div>
             </div>
