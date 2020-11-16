@@ -4,13 +4,7 @@ import './HeaderMain.css';
 const HeaderMain = () => {
     return (
         <section>
-            {/* <div className="my-5" style={{ textAlign: 'center', padding: '20px 0' }} >
-                <h1 style={{ textAlign: 'center', fontSize: "48px" }}
-                >FIND YOUR HOUSE RENT</h1>
-                <input className='input mt-5' type="text" placeholder="Search..." />
-                <button style={{ borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}
-                    className='search-button mx-3' type="submit">Find Now</button>
-            </div> */}
+
             <div className="searchsection d-flex align-items-center">
                 <div className="search container">
                     <div className="row d-flex align-items-center justify-content-center">
