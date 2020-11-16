@@ -6,6 +6,9 @@ import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails'
 import MyOrders from "./components/MyOrders/MyOrders";
 import Login from './components/Login/Login';
 import PrivateRoute from './components/Login/PrivateRoute';
+import Dashboard from './components/Dashboard/Dashboard';
+
+
 export const UserContext = createContext();
 
 function App() {
@@ -16,6 +19,8 @@ function App() {
     password: '',
     message: ''
   });
+
+  
   return (
     <UserContext.Provider value={[user, setUser]}>
       <Router>
@@ -23,9 +28,9 @@ function App() {
           <Route exact path="/">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/home/:id">
+          <Route path="/home/:id">
             <HomeDetails></HomeDetails>
-          </PrivateRoute>
+          </Route>
           <Route path="/home">
             <Home></Home>
           </Route>
@@ -34,9 +39,13 @@ function App() {
           </Route>
           <Route path="/login">
             <Login> </Login>
+            <Route path="/dashboard/:selectedService">
+            <Dashboard />
+        </Route>
           </Route>
         </Switch>
       </Router>
+
     </UserContext.Provider>
   );
 }
