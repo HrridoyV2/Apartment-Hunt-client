@@ -1,12 +1,12 @@
 import React from "react";
 import "./HuntGallery.css";
 
-import hunt from "../../../image/images/Rectangle 406.png";
+import hunt from "../../../image/images/Gorgeous house.png";
 
-import sm1 from "../../../image/images/Rectangle 410.png";
-import sm2 from "../../../image/images/Rectangle 409.png";
-import sm3 from "../../../image/images/Rectangle 408.png";
-import sm4 from "../../../image/images/Rectangle 407.png";
+import sm1 from "../../../image/images/Gorgeous house.png";
+import sm2 from "../../../image/images/Gorgeous house.png";
+import sm3 from "../../../image/images/Gorgeous house.png";
+import sm4 from "../../../image/images/Gorgeous house.png";
 function HuntGallery() {
   return (
     <div className="hunt-gallery">
