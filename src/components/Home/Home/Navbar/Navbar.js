@@ -1,7 +1,42 @@
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { UserContext } from '../../../../App';
 import logo from '../../../../image/logos/Logo.png';
+import "firebase/auth";
+import firebase from "firebase/app";
+
+
 const Navbar = () => {
+    const [user, setUser] = useContext(UserContext);
+    const [admin, setAdmin] = useState(false);
+
+
+    // check for admin
+    useEffect(() => {
+        if(user.signed) {
+            fetch(`https://radiant-hamlet-66107.herokuapp.com/checkAdmin/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data);
+            })
+        }
+    }, [user.signed, user.email])
+
+    // signing out
+    function signOutAll(){
+        firebase.auth().signOut()
+        .then(() => setUser({
+                signed: false,
+                name: '',
+                email: '',
+                password: '',
+                message: ''
+        }))
+        .catch(error => console.log(error))   
+    }
+
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light py-3">
             <div className="container">
@@ -32,9 +67,23 @@ const Navbar = () => {
                             <Link className="nav-link mr-5 font-weight-bold" to="/contact">Contact</Link>
                         </li>
                     </ul>
-                    <Link to='/login' className='link'>
-                        <button style={{ padding: '4px 20px', color: "white", backgroundColor: " #275A53" }}
-                            className='btn-sm font-weight-bold'>Login</button></Link>
+                    {
+                            user.signed ?
+                            <Button onClick={signOutAll} style={{ padding: '4px 20px', color: "white", backgroundColor: " #275A53" }}
+                            className='btn-sm font-weight-bold'>Logout {user.name}</Button> :
+                            <Link to="/login">
+                                <Button style={{ padding: '4px 20px', color: "white", backgroundColor: " #275A53" }}
+                            className='btn-sm font-weight-bold'>Login</Button>
+                            </Link>
+                        } 
+                        {
+                            user.signed && admin &&
+                            <Link to="/dashboard/admin" className="nav-link btn btn-dark text-white px-3">Admin Dashboard</Link>
+                        }  
+                        {
+                            user.signed && !admin &&
+                            <h5 className="nav-link"><b>{user.name}</b></h5>
+                        }
 
                 </div>
             </div>
