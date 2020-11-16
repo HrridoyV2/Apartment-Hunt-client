@@ -1,8 +1,5 @@
 import React from 'react';
 import MyServices from '../../Dashboard/MyRent/MyRent';
-// import Order from '../Order/Order';
-// // import MyReview from '../MyReview/MyReview';
-// // import AllOrders from '../AllOrders/AllOrders';
 import AddService from '../../Dashboard/AddHouse/AddHouse';
 
 import CustomBar from './CustomBar';

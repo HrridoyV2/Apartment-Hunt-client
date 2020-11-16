@@ -1,7 +1,7 @@
 import React from 'react';
-// import cartImg from '../../../Images/cart.png';
-// import serviceImg from '../../../Images/service.png';
-// import reviewImg from '../../../Images/review.png';
+import cartImg from '../../../image/logos/Group 1343.png';
+import serviceImg from '../../../image/logos/plus 1.png';
+import reviewImg from '../../../image/logos/Group 33351.png';
 
 const CustomBar = (props) => {
     const {setDisplay, features} = props;
@@ -14,7 +14,7 @@ const CustomBar = (props) => {
             </button>
             <button onClick={() => setDisplay(features[1][0])}  className="my-3 btn d-md-block">
                 <img src={serviceImg} width="30px" className="mb-1 d-block mx-auto d-sm-inline" alt=""/>
-                <span className="h5 ml-2">{features[1][1]}</span>
+                {/* <span className="h5 ml-2">{features[1][1]}</span> */}
             </button>
             <button onClick={() => setDisplay(features[2][0])} className="my-3 btn d-md-block">
                 <img src={reviewImg} width="30px" className="mb-1 d-block mx-auto d-sm-inline" alt=""/>
