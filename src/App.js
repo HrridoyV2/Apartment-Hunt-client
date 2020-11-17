@@ -8,7 +8,7 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import BookingList from './components/Dashboard/BookingList/BookingList';
 import AddHouse from './components/Dashboard/AddHouse/AddHouse';
 import MyRent from './components/Dashboard/MyRent/MyRent';
-
+import PrivateRoute from './components/Login/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -60,9 +60,9 @@ function App() {
           <Route path='/addHouse'>
             <AddHouse></AddHouse>
           </Route>
-          <Route path='/myRent'>
+          <PrivateRoute path='/myRent'>
             <MyRent></MyRent>
-          </Route>
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>

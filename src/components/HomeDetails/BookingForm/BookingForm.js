@@ -50,6 +50,7 @@ const BookingForm = ({ selectedRent }) => {
                         type="text"
                         ref={register({ required: true })}
                         name="email"
+                        defaultValue={user.email}
                         placeholder="Email Address"
                         className="form-control"
                         required
