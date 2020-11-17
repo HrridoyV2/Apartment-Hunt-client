@@ -4,11 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home/Home";
 import HomeDetails from './components/HomeDetails/HomeDetails/HomeDetails'
 import Login from './components/Login/Login';
-import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import BookingList from './components/Dashboard/BookingList/BookingList';
 import AddHouse from './components/Dashboard/AddHouse/AddHouse';
 import MyRent from './components/Dashboard/MyRent/MyRent';
-
+import PrivateRoute from './components/Login/PrivateRoute';
 
 export const UserContext = createContext();
 
@@ -35,34 +34,21 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-
-
-          {/* <Route path="/login">
-            <Login> </Login>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
-          </Route> */}
-
-          <Route path="/homeDetails">
-            <HomeDetails></HomeDetails>
-          </Route>
-
-          <Route path='/login'>
+          <Route path="/login">
             <Login> </Login>
           </Route>
-          <Route path='/dashboard'>
-            <Dashboard></Dashboard>
-          </Route>
-          <Route path='/bookingList'>
+          <Route path="/bookingList">
             <BookingList></BookingList>
           </Route>
-          <Route path='/addHouse'>
+          <PrivateRoute path="/dashboard/addHouse">
             <AddHouse></AddHouse>
-          </Route>
-          <Route path='/myRent'>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/myRent">
             <MyRent></MyRent>
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/bookingList">
+            <BookingList />
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserContext.Provider>
