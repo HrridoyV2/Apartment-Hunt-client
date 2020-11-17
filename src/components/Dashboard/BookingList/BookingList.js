@@ -31,6 +31,7 @@ const BookingList = () => {
         }
       });
   }
+  console.log(allOrders);
   return (
     <div className="booking-area  row">
       <div className="col-md-3">
