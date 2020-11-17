@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import HouseRentDetails from '../HouseRentDetails/HouseRentDetails';
 
 const HouseRent = () => {
-      const [rentsData, setRentsData] = useState([])
+    const [rentsData, setRentsData] = useState([])
 
-        useEffect(() => {
-          fetch("http://localhost:5000/rentData")
+    useEffect(() => {
+        fetch("https://afternoon-peak-72930.herokuapp.com/rentData")
             .then((res) => res.json())
             .then((data) => setRentsData(data));
-        }, [])
+    }, [])
     return (
         <section>
 

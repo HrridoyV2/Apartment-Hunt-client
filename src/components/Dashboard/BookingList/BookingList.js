@@ -9,7 +9,7 @@ const BookingList = () => {
 
   // loading all orders
   useEffect(() => {
-    fetch("http://localhost:5000/allOrders")
+    fetch("https://afternoon-peak-72930.herokuapp.com/allOrders")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [user.email]);
@@ -19,7 +19,7 @@ const BookingList = () => {
     const modifiedOrder = { status: e.target.value };
 
     // updating status
-    fetch(`http://localhost:5000/edit/${id}`, {
+    fetch(`https://afternoon-peak-72930.herokuapp.com/edit/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modifiedOrder),
@@ -67,7 +67,7 @@ const BookingList = () => {
                 <tr>
                   <td>{order.name}</td>
                   <td>{order.email}</td>
-                  <td>{order.numer}</td>
+                  <td>{order.number}</td>
                   <td>{order.message}</td>
                   <td>
                     <select

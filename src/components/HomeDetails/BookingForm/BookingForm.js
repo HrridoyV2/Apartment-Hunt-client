@@ -10,7 +10,7 @@ const BookingForm = ({ selectedRent }) => {
         console.log(data);
         const orderDetails = { orderedRent: selectedRent, ...data, status: "Pending" }
         console.log(data);
-        fetch("http://localhost:5000/orderRent", {
+        fetch("https://afternoon-peak-72930.herokuapp.com/orderRent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderDetails),

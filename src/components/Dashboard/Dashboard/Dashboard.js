@@ -5,8 +5,6 @@ const Dashboard = () => {
     return (
         <div className="dashboard container-fluid row">
             <div className="col-md-2">
-
-                <h1>shohel</h1>
                 <Sidebar></Sidebar>
             </div>
         </div>
