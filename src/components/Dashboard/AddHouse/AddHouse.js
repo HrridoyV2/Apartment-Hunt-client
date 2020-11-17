@@ -11,7 +11,7 @@ const AddHouse = () => {
   const [user] = useContext(UserContext);
   const [isAdmin, setIsAdmin] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:5000/isAdmin", {
+    fetch("https://afternoon-peak-72930.herokuapp.com/isAdmin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: user.email }),
@@ -41,14 +41,14 @@ const AddHouse = () => {
     formData.append("location", info.location);
     formData.append("price", info.price);
 
-    fetch("http://localhost:5000/addService", {
+    fetch("https://afternoon-peak-72930.herokuapp.com/addService", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((success) => {
         if (success) {
-          alert("Hunt Added Successfully");
+          alert("Apartment Added Successfully");
         }
       })
       .catch((error) => {
@@ -63,93 +63,93 @@ const AddHouse = () => {
       </div>
       <div className="col-md-8 mt-3">
         <div className="d-flex justify-content-between mt-5 mb-5">
-          <h4>Add Rent House</h4>
+          <h4>Add House</h4>
           <h6>{user.name}</h6>
         </div>
         <div className="booking-form ml-md-5 ml-0">
           {
             isAdmin && <form id="serviceForm" onSubmit={addService}>
-            <div className="form-group row">
-              <div className="col-6">
-                <label htmlFor="title">House Title</label>
-                <input
-                  name="title"
-                  onBlur={handleBlur}
-                  type="text"
-                  id="title"
-                  className="form-control"
-                  placeholder="Enter title"
-                />
-              </div>
-              <div className="col-6">
-                <label htmlFor="price">Price</label>
-                <input
-                  onBlur={handleBlur}
-                  name="price"
-                  type="text"
-                  id="price"
-                  className="form-control"
-                  placeholder="Enter Price"
-                />
-              </div>
-            </div>
-            <div className="form-group row">
-              <div className="col-6">
-                <label htmlFor="location">Location</label>
-                <input
-                  onBlur={handleBlur}
-                  name="location"
-                  type="text"
-                  id="location"
-                  className="form-control"
-                  placeholder="Enter Location"
-                />
-              </div>
-              <div className="col-6">
-                <label htmlFor="bedroom">No of Bedroom</label>
-                <input
-                  name="bedroom"
-                  type="text"
-                  id="bedroom"
-                  className="form-control"
-                  placeholder="Enter No of Bedroom"
-                />
-              </div>
-            </div>
-            <div className="form-group row">
-              <div className="col-6">
-                <label htmlFor="bathroom">No of Bathroom</label>
-                <input
-                  name="bathroom"
-                  type="text"
-                  id="bathroom"
-                  className="form-control"
-                  placeholder="Enter No of Bathroom"
-                />
-              </div>
-              <div className="col-md-3 col-6">
-                <div className="file-upload">
-                  <p className="mb-2">Thumbnail</p>
-                  <label htmlFor="file">
-                    <img style={{ width: "20px" }} src={icon} alt="" />
-                    <span>Upload Image</span>
-                  </label>
+              <div className="form-group row">
+                <div className="col-6">
+                  <label htmlFor="title">House Title</label>
                   <input
-                    name="file"
-                    onChange={handleFile}
-                    type="file"
-                    id="file"
+                    name="title"
+                    onBlur={handleBlur}
+                    type="text"
+                    id="title"
                     className="form-control"
+                    placeholder="Enter title"
+                  />
+                </div>
+                <div className="col-6">
+                  <label htmlFor="price">Price</label>
+                  <input
+                    onBlur={handleBlur}
+                    name="price"
+                    type="text"
+                    id="price"
+                    className="form-control"
+                    placeholder="Enter Price"
                   />
                 </div>
               </div>
-            </div>
-            <div className="text-right">
-              <button type="submit" className="btn">
-                Submit
+              <div className="form-group row">
+                <div className="col-6">
+                  <label htmlFor="location">Location</label>
+                  <input
+                    onBlur={handleBlur}
+                    name="location"
+                    type="text"
+                    id="location"
+                    className="form-control"
+                    placeholder="Enter Location"
+                  />
+                </div>
+                <div className="col-6">
+                  <label htmlFor="bedroom">No of Bedroom</label>
+                  <input
+                    name="bedroom"
+                    type="text"
+                    id="bedroom"
+                    className="form-control"
+                    placeholder="Enter No of Bedroom"
+                  />
+                </div>
+              </div>
+              <div className="form-group row">
+                <div className="col-6">
+                  <label htmlFor="bathroom">No of Bathroom</label>
+                  <input
+                    name="bathroom"
+                    type="text"
+                    id="bathroom"
+                    className="form-control"
+                    placeholder="Enter No of Bathroom"
+                  />
+                </div>
+                <div className="col-md-3 col-6">
+                  <div className="file-upload">
+                    <p className="mb-2">Thumbnail</p>
+                    <label htmlFor="file">
+                      <img style={{ width: "20px" }} src={icon} alt="" />
+                      <span>Upload Image</span>
+                    </label>
+                    <input
+                      name="file"
+                      onChange={handleFile}
+                      type="file"
+                      id="file"
+                      className="form-control"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="text-right">
+                <button type="submit" className="btn">
+                  Submit
               </button>
-            </div>
-          </form>
+              </div>
+            </form>
           }
         </div>
       </div>

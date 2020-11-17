@@ -10,7 +10,7 @@ const HomeDetails = () => {
     const [selectedRent, setSelectedRent] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:5000/home/" + id)
+        fetch("https://afternoon-peak-72930.herokuapp.com/home/" + id)
             .then((res) => res.json())
             .then((data) => {
                 setSelectedRent(data);

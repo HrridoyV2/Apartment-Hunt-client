@@ -4,7 +4,7 @@ background: #275A53;
 border-radius: 5px;
 } */
 .searchsection {
-    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("../../../../image/images/Luxury\ villa.png");
+    background-image:linear-gradient(to right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url("../../../../image/images/ShowOff.png");
     background-repeat: no-repeat;
     background-position: center ;
     background-size: cover;

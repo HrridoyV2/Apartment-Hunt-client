@@ -9,7 +9,7 @@ const MyRent = () => {
 
   // loading user's orders
   useEffect(() => {
-    fetch(`http://localhost:5000/myRents/${user.email}`)
+    fetch(`https://afternoon-peak-72930.herokuapp.com/myRents/${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyRents(data));
   }, [user.email]);
@@ -22,7 +22,8 @@ const MyRent = () => {
       </div>
       <div className="col-md-8 mt-3">
         <div className="d-flex justify-content-between mt-5 mb-5">
-          <h4>{user.name}</h4>
+          <h4>My Rents</h4>
+          <h6>{user.name}</h6>
         </div>
         <div className="rents-table">
           <table className="table">
@@ -41,17 +42,17 @@ const MyRent = () => {
             </thead>
             <tbody>
               {
-              myRents.map(rents => 
-                <tr>
-                  <td className="pt-4">{rents.orderedRent.title}</td>
-                  <td className="pt-4">${rents.orderedRent.price}</td>
-                  <td>
-                    <a class="btn" href="#">
-                      View Details
+                myRents.map(rents =>
+                  <tr>
+                    <td className="pt-4">{rents.orderedRent.title}</td>
+                    <td className="pt-4">${rents.orderedRent.price}</td>
+                    <td>
+                      <a class="btn" href="#">
+                        View Details
                     </a>
-                  </td>
-                </tr>
-              )
+                    </td>
+                  </tr>
+                )
               }
             </tbody>
           </table>
