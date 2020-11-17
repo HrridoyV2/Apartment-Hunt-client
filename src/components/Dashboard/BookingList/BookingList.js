@@ -13,24 +13,21 @@ const BookingList = () => {
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [user.email]);
-  console.log(allOrders);
 
   // handling status change
   function statusChange(id, e) {
     const modifiedOrder = { status: e.target.value };
-    document.getElementById("update").innerText = "Updateding Changes";
 
     // updating status
-    fetch(`https://radiant-hamlet-66107.herokuapp.com/edit/${id}`, {
+    fetch(`http://localhost:5000/edit/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(modifiedOrder),
     })
       .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          document.getElementById("update").innerText =
-            "Changes Updated Successfully!";
+      .then((success) => {
+        if (success) {
+          alert('Updated Successful')
         }
       });
   }
@@ -42,7 +39,7 @@ const BookingList = () => {
       <div className="col-md-8 mt-3">
         <div className="d-flex justify-content-between mt-5 mb-5">
           <h4>Booking List</h4>
-          <h6>Shohel Rana</h6>
+          <h6>{user.name}</h6>
         </div>
         <div>
           <table className="table">
@@ -73,7 +70,21 @@ const BookingList = () => {
                   <td>{order.numer}</td>
                   <td>{order.message}</td>
                   <td>
-                    Pending
+                    <select
+                      className="form-control"
+                      onChange={(e) => statusChange(order._id, e)}
+                      name="status"
+                    >
+                      {statuses.map((option) => (
+                        <option
+                          key={option}
+                          value={option}
+                          selected={option === order.status}
+                        >
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </td>
                 </tr>
               ))}

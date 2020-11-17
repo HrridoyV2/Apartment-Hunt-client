@@ -22,8 +22,7 @@ const MyRent = () => {
       </div>
       <div className="col-md-8 mt-3">
         <div className="d-flex justify-content-between mt-5 mb-5">
-          <h4>My Rents</h4>
-          <h6>Shohel rana</h6>
+          <h4>{user.name}</h4>
         </div>
         <div className="rents-table">
           <table className="table">

@@ -5,12 +5,20 @@ import bath from '../../../../image/logos/bath 1.png';
 import { Link } from 'react-router-dom';
 
 const HouseRentDetails = ({ houseRentData }) => {
-  const { title, price, img, location, _id } = { ...houseRentData }
+  const { title, price, img, image, location, _id } = { ...houseRentData }
 
   return (
     <div className="col-md-4">
       <div className="card mt-4">
-        <img className="card-img-top" src={img} alt="" />
+        {image ? (
+          <img
+            className="card-img-top"
+            src={`data:image/png;base64,${image.img}`}
+            alt=""
+          />
+        ) : (
+          <img className="card-img-top" src={img} alt="" />
+        )}
         <div className="card-body">
           <h4 className="card-title">{title}</h4>
           <div className="d-flex mb-2">
@@ -43,7 +51,7 @@ const HouseRentDetails = ({ houseRentData }) => {
                 style={{ backgroundColor: "#275A53", color: "#F1F6F4" }}
               >
                 View Details
-                </button>
+              </button>
             </Link>
           </div>
         </div>

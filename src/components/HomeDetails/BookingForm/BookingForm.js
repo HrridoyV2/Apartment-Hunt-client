@@ -8,7 +8,7 @@ const BookingForm = ({ selectedRent }) => {
     const [user, setUser] = useContext(UserContext);
     const onSubmit = (data) => {
         console.log(data);
-        const orderDetails = { orderedRent: selectedRent, ...data }
+        const orderDetails = { orderedRent: selectedRent, ...data, status: "Pending" }
         console.log(data);
         fetch("http://localhost:5000/orderRent", {
             method: "POST",
