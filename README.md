@@ -2,14 +2,13 @@
 ***
 ### [Live site link](https://apartment-hunt-49.web.app)
 ### Features: 
-- It's Good looking Responsive Service provider site.
+- It's Good looking Responsive Apartment provider site.
 - Home page is nice looging, animated and responsive for any kind of devices
-- Authentication are made by Firebase, so people can easily login with Google or any kind of E-mail
-- People can easily parchase course for improving their technical skills
+- Authentication are made by Firebase, so people can easily login with Google, Facebook or any kind of E-mail
+- People can easily parchase apartment
 - Order process is very easy, and have client dashborad where people can easily see their orders after parchase
-- Intered people can easily give their review and reviews are show dynamicly
 - There is also a admin dashboard
-- admin can easily see all orders, add services and add admin any time
+- admin can easily see all orders, add apartment and
 ## Used Technoloy: `React`, `React-router`, `Firebase`, `Bootstrap`, `React-Form-hook`, `Fontawesome`
 
 ### [Apartment-Hunt-server-code](https://github.com/HrridoyV2/Apartment-Hunt-server)
